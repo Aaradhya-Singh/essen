@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <title>ESSEN | Canteen Service</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)) , url(https://c4.wallpaperflare.com/wallpaper/846/281/183/food-4k-pc-desktop-wallpaper-preview.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li ::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336 ;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px) {
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+
+/*---------- course ----------*/
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #ffb3b3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    cursor: pointer;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width: 700px) {
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/*----------Campus Codes---------*/
+
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226,0,0,0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+.layer p{
+    width: 100%;
+    font-weight: 300;
+    color: #fff;
+    font-size: 16px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover p{
+    bottom: 30%;
+    opacity: 1;
+}
+@media(max-width: 700px) {
+    .campus-col img{
+        height: 300px;
+    }
+    .layer p{
+        font-size: 13px;
+    }
+    .layer h3{
+        font-size: 20px;
+    }
+    .layer:hover p{
+        bottom: 20%;
+        opacity: 1;
+    }
+}
+
+/*----------------------------Facilities------------------------------------*/
+
+.facilites{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilites-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilites-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilites-col p{
+    padding: 0;
+}
+.facilites-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*----------------------Testimonials----------------------*/
+
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.testimonials-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #ffc1c1;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonials-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonials-col p{
+    padding: 0;
+}
+.testimonials-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+@media (max-width:700px){
+    .testimonials-col{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .testimonials-col img{
+        width: 30%;
+    height: 45%;
+    }
+}
+
+/*----------------------CONTACT----------------------*/
+
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) , url(https://media.istockphoto.com/id/1191080960/photo/traditional-turkish-breakfast-and-people-taking-various-food-wide-composition.jpg?s=612x612&w=0&k=20&c=PP5ejMisEwzcLWrNmJ8iPPm_u-4P6rOWHEDpBPL2n7Q=);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: #fff;
+    margin: 40px;
+    padding: 0;
+}
+.cta p{
+    color: #fff;
+    margin: 20px;
+    padding: 0;
+}
+@media(max-width: 700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+
+/*----------------------FOOTER----------------------*/
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/*---------------------QR Code--------------*/
+#qr-scanner {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#scanner-video {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 600px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7) , rgba(4,9,30,0.7)) , url(food_main.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub-header h1{
+    margin-top: 100px;
+}
+
+/* FORM */
+#section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#section label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+#section button {
+    background-color: #ff6b60;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#section button:hover {
+    background-color: #f44336;
+}
+
+#section #result {
+    margin-top: 20px;
+}
+
+/*----------------------BLOG CONTENT----------------------*/
+
+.blog-content{
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+}
+.blog-left{
+    flex-basis: 65%;
+}
+.blog-left img{
+    width: 100%;
+}
+.blog-left h4{
+    color: #222;
+    font-weight: 600;
+    margin: 30px 0;
+}
+.blog-left p{
+    color: #999;
+    padding: 0;
+}
+.blog-right{
+    flex-basis: 32%;
+}
+.blog-right h3{
+    background: #f44336;
+    color: #fff;
+    padding: 7px 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.blog-right div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #555;
+    padding: 8px;
+    box-sizing: border-box;
+}
+@media (max-width:700px){
+    .sub-header h1{
+        font-size: 24px;
+    }
+}
+.img img{
+    width: 70%;
+    margin: 5%;
+    border: 2px solid #f44444;
+    border-radius: 20px;
+}
+@media (max-width:700px){
+    .img img{
+        width: 90%;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Welcome to ESSEN</h1>
+            <p>Discover a wide range of nutritious and delicious products that will elevate your well-being.</p>
+            <a href="" class="hero-btn">Visit us to know more
+            </a>
+        </div>
+    </section>
+
+   <!-------------------------Blog Page Content------------------------------------------------>
+
+<section class="blog-content">
+    <div class="row" id="about">
+        <div class="blog-left">
+            <img src="https://t3.ftcdn.net/jpg/06/29/07/22/360_F_629072294_l7NgGEUvrQOMJXqn10wpF4HGhrDfETOm.jpg">
+            <h4>WHAT IS OUR BUSINESS?</h4>
+            <p>We noticed that some schools have no canteen, and it is sometimes a
+                hassle for our parents to provide us with food. Teachers also complain
+                about the food system of the school! In fact, a number of school which
+                have canteens complain about the food hygiene and structure there. So,
+                to solve this unsolved dilemma, our team has set-up to open a chain of
+                canteens in the school. So, we bring to you <b>"ESSEN"</b> to solve all your food problems!</p>
+            <br>
+            <p>We found many root causes and intent to solve them. They are The dietary needs of a child at school are not met at times. Instead of healthy and cleaner foods, they have breads, noodles and other detrimental foods. Parents who are under the pressure of work cannot cook for their childwhich results in the child needing to have unconventional food likes, sandwiches, burgers etc. The lucrative condition of a parent might not as good to buy healthier and cleaner versions of food. The sodium and fat intake in young children is heigher than the protein intake.</p>
+            <br>
+            <p>According to a survey that we took, 9 out of 10 people going to school would prefer our canteen over normal school canteen, which increases the chances of our profit. The value we add to a child's food habits accomodate why we are good for our customers. The parents are ensured that their child is eating clean and good food. Moreover they even get insights of what is going into their child's stomach. It also reduces the parents' worries on making food everyday.</p>
+            <br>
+            <p>Also according to, our literature survey the CAGR of Indian
+                Food Service Market is 11.19%, and we are sure that we
+                would surpass this rate with higher annual and monthly
+                growth rates.</p>
+            
+        </div>
+        <div class="blog-right">
+            <h3>Our Team</h3>
+            <div>
+                <span>Sales and Marketing</span>
+            </div>
+            <div>
+                <span>Research and Devlopment</span>
+            </div>
+            <div>
+                <span>Project Desginer</span>
+            </div>
+            <div>
+                <span>Technology</span>
+            </div>
+            <div>
+                <span>Finance</span>
+            </div>
+            <div>
+                <span>Food Making Team</span>
+            </div>
+            <div>
+                <span>Supervisor</span>
+            </div>
+            <div>
+                <span>Porters & Cleaners</span>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!----------------------Menu-->
+<center><div class="img">
+<img src="https://i.ibb.co/qNMftLc/Competitive-Analysis-pdf.png" alt="" width="70%">
+</div></center>
+
+     <!-----------------------------Vareity of Food---------------------------->
+
+     <section class="campus">
+        <h1>Our Vairety of Food</h1>
+        <p>We are providing vareities of food with a modern and traditional touch combined to cater to the nutritional needs and as well as the tastes of today's generation children.</p>
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="https://th.bing.com/th/id/OIG.kROH9a83U3khKws7ww3_?w=173&h=173&c=6&r=0&o=5&dpr=1.1&pid=ImgGn" alt="Superfood Smoothie">
+                <div class="layer">
+                    <h3>Bajra Dosa</h3>
+                    <p>A delicious blend of nutrients and taste.
+                    </p>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="https://th.bing.com/th/id/OIG.eD3bdfPqPr8C1mkqq5H3?w=173&h=173&c=6&r=0&o=5&dpr=1.1&pid=ImgGn" alt="london">
+                <div class="layer">
+                    <h3>Ragi Pancakes</h3>
+                    <p>Fluffy, light, and delicious pancakes made with finger millet flour</p>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="https://hungryforever.net/wp-content/uploads/2019/03/masala-oats-recipe-hf.jpg" alt="london">
+                <div class="layer">
+                    <h3>Masala Oats</h3>
+                    <p>Perfect to begin your Day !!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-------------------------------social cause---------------------------------->
+    <section class="course">
+        <h1>Social Cause</h1>
+        <p>We are not only merely focusing only on our buisness but are also seeking solutions for many social causes.</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>For Workers</h3>
+                <p>We hire all workers with potential in making food but are untapped or unemployed, like homemakers, rural people, seasonally unemployed etc.</p>
+            </div>
+            <div class="course-col">
+                <h3>For Environment</h3>
+                <p>We do also adhere to environmental rules like recycling our food waste and ensuring no more than 3% of food wastage.</p>
+            </div>
+            <div class="course-col">
+                <h3>For Child's Health</h3>
+                <p>We majorly put our
+                    concerns about a
+                    child's eating habits,
+                    therefore encouraging
+                    mindful eating by
+                    introducing various
+                    traditional and healthy foods .</p>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------Facilities-------------
+
+    <section class="facilites">
+        <h1>Our Facilities</h1>
+        <p>Having properly managed facilities has a significant impact on employee morale. It helps them focus, take pride in their workplace.</p>
+
+        <div class="row">
+            <div class="facilites-col">
+                <img src="eduford_img/library.png" alt="library">
+                <h3>World Class Library</h3>
+                <p>Libraries are important cornerstones of a healthy community. Libraries give people the opportunity , to find jobs etc...</p>
+            </div>
+
+                <div class="facilites-col">
+                    <img src="eduford_img/basketball.png" alt="library">
+                    <h3>Largest Play Ground</h3>
+                    <p>Sports is very essential for every human life which keep them fit and fine and physical strength. It has great importance in each stage of life...</p>
+                </div>
+
+                    <div class="facilites-col">
+                        <img src="eduford_img/cafeteria.png" alt="library">
+                        <h3>Tasty and Healthy Food</h3>
+                        <p>A food is something that provides nutrients. Nutrients are substances that provide: energy for activity, growth, and all functions of the body...</p>
+                    </div>
+                    </div>
+        </div>
+    </section>
+    ----------->
+
+    <!----------------------Testimonials---------------------->
+
+    <section class="testimonials">
+        <h1>What our students says</h1>
+        <p>We recieved many positive comments on our start up project "Essen".</p>
+
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="https://cdn-icons-png.flaticon.com/512/219/219964.png" alt="user1">
+                <div>
+                    <p>"Find the diversified food options from across the country a great way of inclusivity, great work!"</p>
+                    <h3>Vikram Singh</h3>
+                </div>
+            </div>
+
+            <div class="testimonials-col">
+                <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="user1">
+                <div>
+                    <p>"It eases a parent's life and resuced the fear of unwanted diseases in children"</p>
+                    <h3>Lakshmi Seth</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------QR Code---------------->
+    <div id="qr-scanner">
+        <h1>Scan QR Code</h1>
+        <video id="scanner-video"></video>
+        <p>Not working? <a href="https://webqr.com/">Click here!</a></p>
+    </div>
+
+        <!----------------------Call to Action---------------------->
+
+        <section id="contact" class="cta">
+            <h1>Contact us for any query from<br>Anywhere from the World</h1>
+            <a href="mailto:essencanteenservice@gmail.com"class="hero-btn">CONTACT US</a>
+            <p>Email : essencanteenservice@gmail.com</p>
+            <p>Phone no. : 8999809XXX</p>
+        </section>
+
+
+
+    <!--------JavaScript for toggle menu------>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+<script src="https://cdn.rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+<script>
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        .then(function (stream) {
+            var video = document.getElementById('scanner-video');
+            video.srcObject = stream;
+            video.setAttribute('playsinline', true);
+            video.play();
+
+            function readQRCode() {
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                var code = jsQR(imageData.data, canvas.width, canvas.height);
+
+                if (code) {
+                    alert('Scanned QR Code: ' + code.data);
+                }
+
+                requestAnimationFrame(readQRCode);
+            }
+
+            readQRCode();
+        })
+        .catch(function (error) {
+            console.error('Error accessing webcam:', error);
+        });
+
+</script>
+</body>
+</html>
